@@ -1,0 +1,23 @@
+PROG = prog
+OBJS = cal_main.o add.o sub.o mul.o dur.o
+
+$(PROG): $(OBJS)
+	$(CC) -o $(PROG) $(OBJS)
+
+cal_main.o : cal_main.c arithmetic.h
+	$(CC) -I. -c cal_main.c
+
+add.o : add.c arithmetic.h
+	$(CC) -I. -c add.c
+
+sub.o : sub.c arithmetic.h
+	$(CC) -I. -c sub.c
+
+mul.o : mul.c arithmetic.h
+	$(CC) -I. -c mul.c
+
+dur.o : dur.c arithmetic.h
+	$(CC) -I. -c dur.c
+
+clean:
+	rm -rf $(PROG) $(OBJS)

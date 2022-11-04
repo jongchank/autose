@@ -1,0 +1,13 @@
+PROG = prog
+OBJS = cal_main.o add.o sub.o mul.o dur.o
+SRCS = $(OBJS:.o=.c)
+CFLAGS = -I. -Wall
+
+$(PROG): $(OBJS)
+	$(CC) -o $(PROG) $(OBJS)
+
+dep:
+	gccmakedep -- $(CFLAGS) -- $(SRCS)
+
+clean:
+	rm -rf $(PROG) $(OBJS) 
