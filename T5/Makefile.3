@@ -5,11 +5,11 @@ CFLAGS = -I. -Wall
 $(PROG): $(OBJS)
 	$(CC) -o $(PROG) $(OBJS)
 
-cal_main.o : cal_main.c arithmetic.h
-add.o : add.c arithmetic.h
-sub.o : sub.c arithmetic.h
-mul.o : mul.c arithmetic.h
-dur.o : dur.c arithmetic.h
+cal_main.o: cal_main.c arithmetic.h
+add.o: add.c arithmetic.h
+sub.o: sub.c arithmetic.h
+mul.o: mul.c arithmetic.h
+dur.o: dur.c arithmetic.h
 
 clean:
 	rm -rf $(PROG) $(OBJS)
